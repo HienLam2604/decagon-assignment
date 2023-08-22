@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+:root {
+  --height: 200px;
+  --boxsize: 5;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 10% 0;
+}
+.container #lang-picker {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.date-picker-wrapper {
+  position: relative;
+  width: 350px;
+  background-color: rgb(58, 86, 183);
+  margin: 15px auto;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.date-picker-wrapper .selected-date {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+}
+.date-picker-wrapper .dates-container {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.date-picker-wrapper .dates-container .month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: rgb(58, 86, 183);
+}
+.date-picker-wrapper .dates-container .month .arrows {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+.date-picker-wrapper .dates-container .month .arrows:hover {
+  background-color: rgb(91, 122, 227);
+}
+.date-picker-wrapper .dates-container .month .arrows:active {
+  background-color: rgb(91, 122, 227);
+}
+.date-picker-wrapper .dates-container .days-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: var(--height);
+  grid-auto-rows: calc(var(--height) / var(--boxsize));
+  background-color: rgb(54, 49, 56);
+}
+.date-picker-wrapper .dates-container .days-container .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.date-picker-wrapper .dates-container .days-container .day:hover {
+  background-color: rgb(91, 122, 227);
+}
+.date-picker-wrapper .dates-container .days-container .day.selected {
+  background-color: rgb(58, 86, 183);
+}
+.date-picker-wrapper .active {
+  visibility: visible;
+}
+
+.disabled-date {
+  pointer-events: none;
+  opacity: 0.4;
+}/*# sourceMappingURL=style.css.map */

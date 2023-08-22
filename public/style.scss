@@ -1,0 +1,117 @@
+@import "scss/variables.scss";
+
+$theme-colors: (
+	primary: $primary-color,
+);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-family;
+	background-color: map-get($map: $theme-colors, $key: primary);
+}
+
+:root {
+	--height: 200px;
+	--boxsize: 5;
+}
+
+.container {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	margin: 10% 0;
+	#lang-picker {
+		width: fit-content;
+		font-size: 20px;
+		margin-top: 20px;
+		cursor: pointer;
+	}
+}
+
+.date-picker-wrapper {
+	position: relative;
+	width: 350px;
+	background-color: rgb(58 86 183);
+	margin: 15px auto;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	user-select: none;
+
+	.selected-date {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: 28px;
+	}
+
+	.dates-container {
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: #fff;
+
+		.month {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: white;
+			background-color: rgb(58 86 183);
+
+			.arrows {
+				width: 35px;
+				height: 35px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				font-size: 14px;
+				&:hover {
+					background-color: rgb(91 122 227);
+				}
+				&:active {
+					background-color: rgb(91 122 227);
+				}
+			}
+		}
+
+		.days-container {
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			height: var(--height);
+			grid-auto-rows: calc(var(--height) / var(--boxsize));
+			background-color: rgb(54 49 56);
+
+			.day {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				&:hover {
+					background-color: rgb(91 122 227);
+				}
+			}
+
+			.day.selected {
+				background-color: rgb(58 86 183);
+			}
+		}
+	}
+	.active {
+		visibility: visible;
+	}
+}
+
+.disabled-date {
+	pointer-events: none;
+	opacity: 0.4;
+}
