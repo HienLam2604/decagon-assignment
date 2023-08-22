@@ -41,9 +41,13 @@ Run **index.html** file
 
 ## Demo
 
+Link demo: **https://hienlam2604.github.io/decagon-assignment/**
+
 - Date picker - English language
+
 ![Date picker - English language](https://drive.google.com/uc?export=view&id=1ZEI8KKwHKSyRQOYH9p03FDBO-5o2y1ey)
 
 - Date picker - Vietnamese language
+
 ![Date picker - Vietnamese language](https://drive.google.com/uc?export=view&id=1vqJNyedUvagtRRPW3gO25dE5vGzK1bQp)
 
